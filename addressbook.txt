@@ -1,0 +1,42 @@
+mysql> create database AddressBookService;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| addressbookservice |
+| example            |
+| information_schema |
+| mysql              |
+| payroll_service    |
+| performance_schema |
+| studen             |
+| sys                |
+| test               |
++--------------------+
+9 rows in set (0.00 sec)
+
+mysql> use AddressBookService;
+Database changed
+mysql> create table AddressBook (firstName varchar(50) not null,lastName varchar(50) not null,address varchar(100) not null,city varchar(50) not null,state varchar(50) not null,zip int not null,phoneNumber double not null,email varchar(100) not null );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql>  desc AddressBook;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| firstName   | varchar(50)  | NO   |     | NULL    |       |
+| lastName    | varchar(50)  | NO   |     | NULL    |       |
+| address     | varchar(100) | NO   |     | NULL    |       |
+| city        | varchar(50)  | NO   |     | NULL    |       |
+| state       | varchar(50)  | NO   |     | NULL    |       |
+| zip         | int          | NO   |     | NULL    |       |
+| phoneNumber | double       | NO   |     | NULL    |       |
+| email       | varchar(100) | NO   |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql>   insert into AddressBook (firstname, lastname, address,city, state, zip,phoneNumber,email) values ('Anji Raj', 'Palegar','Yelahanka','Bengaluru','Karnataka',560064,8310133663,'imprash4u@gmail.com'),('ramakrishna ','mlg','Palegar','Ramapura','Bengaluru','Karnataka',561210,999999999,'praven@gmail.com'),('sandeep','Jalgar','Santhebidnur','Hindupur','Andra Pradesh',520102,888888888,'bharath@gmail.com');
+ERROR 1136 (21S01): Column count doesn't match value count at row 2
+mysql>   insert into AddressBook (firstname, lastname, address,city, state, zip,phoneNumber,email) values ('Anji Raj', 'Palegar','Yelahanka','Bengaluru','Karnataka',560064,8310133663,'imprash4u@gmail.com'),('ramakrishna ','mlg','Palegar','Ramapura','Bengaluru','Karnataka',561210,999999999,'praven@gmail.com'),('sandeep','Jalgar','Santhebidnur','Hindupur','Andra Pradesh',520102,888888888,'bharath@gmail.com');
